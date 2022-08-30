@@ -4,6 +4,7 @@ def call(name){
         def creds = 'gitnewusethis'
         def sharedlib = 'https://github.com/srijaneogi/sharedlib1.git'
         def no = 1
+        try {
         stage('Preparation') { 
 //             dir('thisdir') {
                 echo "${name} hello from shared lib 1"
@@ -18,7 +19,12 @@ def call(name){
             }
         }
         stage('conclusion') { 
-            echo "${name} hello from shared lib 1"
+            echo "${name} hello from shared lib 1 stage 3"
+        }
+        } catch(e) {
+            echo "This will run only if failed"
+            currentBuild.result = 'FAILURE'
+        
         }
     }
 }
