@@ -3,6 +3,7 @@ def call(name){
         def mvnHome
         def creds = 'gitnewusethis'
         def sharedlib = 'https://github.com/srijaneogi/sharedlib1.git'
+        def no = 1
         stage('Preparation') { 
 //             dir('thisdir') {
                 echo "${name} hello from shared lib 1"
