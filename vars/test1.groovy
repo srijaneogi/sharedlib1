@@ -1,6 +1,6 @@
 def call(name){
     pipeline {
-        agent any
+    agent any
         def mvnHome
         def creds = 'gitnewusethis'
         def sharedlib = 'https://github.com/srijaneogi/sharedlib1.git'
