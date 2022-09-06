@@ -7,7 +7,9 @@ def call(name){
         try {
         stage('Preparation') {
             when {
-                branch 'dev'
+                expression {
+                    env.BRANCH_NAME == 'develop' || env.BRANCH_NAME == 'master'
+                }
             }
 //             dir('thisdir') {
                 echo "${name} hello from shared lib 1"
