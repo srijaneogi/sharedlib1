@@ -8,7 +8,7 @@ def call(name){
         stage('Preparation') {
             when {
                 expression {
-                    env.BRANCH_NAME == 'develop' || env.BRANCH_NAME == 'master'
+                    env.BRANCH_NAME == 'dev' || env.BRANCH_NAME == 'qat'
                 }
             }
 //             dir('thisdir') {
