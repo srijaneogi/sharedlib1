@@ -4,8 +4,9 @@ def call(name){
         def no=1
         stage('Preparation') {
             when {
-                branch 'master'
+                branch 'dev'
             }
+            
             echo "${name} hello from shared lib 1"
         }
         stage('validation') { 
