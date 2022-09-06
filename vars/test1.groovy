@@ -5,7 +5,10 @@ def call(name){
         def sharedlib = 'https://github.com/srijaneogi/sharedlib1.git'
         def no = 1
         try {
-        stage('Preparation') { 
+        stage('Preparation') {
+            when {
+                branch 'dev'
+            }
 //             dir('thisdir') {
                 echo "${name} hello from shared lib 1"
                 git credentialsId: creds, url: sharedlib, branch: 'master'
