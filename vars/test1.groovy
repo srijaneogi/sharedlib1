@@ -2,7 +2,10 @@ def call(name){
     node {
         def mvnHome
         def no=1
-        stage('Preparation') { 
+        stage('Preparation') {
+            when {
+                branch 'master'
+            }
             echo "${name} hello from shared lib 1"
         }
         stage('validation') { 
