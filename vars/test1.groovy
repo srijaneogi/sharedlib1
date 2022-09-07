@@ -11,23 +11,29 @@ def call(name){
                     when {
                         expression {
                             env.BRANCH_NAME == 'dev' || env.BRANCH_NAME == 'qat'
+                        }
                     }
-                }
+                    
 //                  dir('thisdir') {
+                    steps {
                         echo "${name} hello from shared lib 1"
                         git credentialsId: creds, url: sharedlib, branch: 'master'
-//                  }
-                    echo "2222222222 ${name} hello from shared lib 1"
+                        echo "2222222222 ${name} hello from shared lib 1"
+                    }                   
                 }
                 stage('validation') { 
-                    echo "${name} hello from shared lib 1 stage 2"
-                    if ( no == 1) {
-                        error "Need to abort this build"
-                        sleep 5
-                    }
+                    steps {
+                        echo "${name} hello from shared lib 1 stage 2"
+                        if ( no == 1) {
+                            error "Need to abort this build"
+                            sleep 5
+                        }
+                    }    
                 }
                 stage('conclusion') { 
-                    echo "${name} hello from shared lib 1 stage 3"
+                    steps {
+                        echo "${name} hello from shared lib 1 stage 3"
+                    }
                 }
             }   
           } catch(e) {
