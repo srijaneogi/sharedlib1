@@ -6,7 +6,7 @@ def call(name){
         	stage('Hello') {
 			when {
                         	expression {
-                            		env.BRANCH_NAME == 'dev' || env.BRANCH_NAME == 'qat'
+                            		env.BRANCH_NAME == 'dev' || env.BRANCH_NAME == 'master'
                         	}
                     	}
             		steps {
