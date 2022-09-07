@@ -37,9 +37,10 @@ def call(name){
                 }
             }   
           } catch(e) {
-            echo "This will run only if failed"
-            currentBuild.result = 'FAILURE'
+				echo "This will run only if failed"
+				currentBuild.result = 'FAILURE'
         
-        }
-    }
+			}
+		}
+	}
 }
