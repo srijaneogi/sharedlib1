@@ -5,7 +5,6 @@ def call(name){
         def creds = 'gitnewusethis'
         def sharedlib = 'https://github.com/srijaneogi/sharedlib1.git'
         def no = 1
-        try {
             stages {    
                 stage('Preparation') {
                     when {
@@ -15,11 +14,12 @@ def call(name){
                     }
                     
 //                  dir('thisdir') {
-                    steps {
-                        echo "${name} hello from shared lib 1"
-                        git credentialsId: creds, url: sharedlib, branch: 'master'
-                        echo "2222222222 ${name} hello from shared lib 1"
-                    }                   
+						steps {
+							echo "${name} hello from shared lib 1"
+							git credentialsId: creds, url: sharedlib, branch: 'master'
+							echo "2222222222 ${name} hello from shared lib 1"
+						}
+					}		
                 }
                 stage('validation') { 
                     steps {
@@ -35,12 +35,6 @@ def call(name){
                         echo "${name} hello from shared lib 1 stage 3"
                     }
                 }
-            }   
-          } catch(e) {
-				echo "This will run only if failed"
-				currentBuild.result = 'FAILURE'
-        
-			}
-		}
+            }    
 	}
 }
