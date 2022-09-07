@@ -4,11 +4,11 @@ def call(name){
 
     	stages {
         	stage('Hello') {
-// 			when {
-//                         	expression {
-//                             		env.BRANCH_NAME == 'qat' || env.BRANCH_NAME == 'master'
-//                         	}
-//                     	}
+			when {
+                        	expression {
+                            		env.BRANCH_NAME == 'qat' || env.BRANCH_NAME == 'master'
+                        	}
+                    	}
             		steps {
 				script {
 					def b = env.BRANCH_NAME
