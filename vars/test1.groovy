@@ -4,6 +4,11 @@ def call(name){
 
     	stages {
         	stage('Hello') {
+			when {
+                        	expression {
+                            		env.BRANCH_NAME == 'dev' || env.BRANCH_NAME == 'qat'
+                        	}
+                    	}
             		steps {
                 		echo 'Hello World'
 				echo "2222222222 ${name} hello from shared lib 1"
