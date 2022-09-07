@@ -11,7 +11,7 @@ def call(name){
 //                     	}
             		steps {
 				script {
-					def b = BRANCH_NAME
+					def b = ${BRANCH_NAME}
 					echo "$b"
                 			echo 'Hello World'
 					echo "2222222222 ${name} hello from shared lib 1"
