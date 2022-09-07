@@ -10,7 +10,8 @@ def call(name){
 //                         	}
 //                     	}
             		steps {
-				echo "env.BRANCH_NAME"
+				def b = env.BRANCH_NAME
+				echo "$b"
                 		echo 'Hello World'
 				echo "2222222222 ${name} hello from shared lib 1"
             		}
