@@ -1,4 +1,12 @@
 def call(name){
+    node {
+    	stage ('nodestage') {
+		if (!currentBuild.getBuildCauses('jenkins.branch.BranchEventCause')) {
+			currentBuild.result = 'ABORTED'
+        		error('Stopping early…')
+		}	
+	}
+    }
     pipeline {
     	agent any
 
