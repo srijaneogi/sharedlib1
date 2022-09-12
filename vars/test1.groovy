@@ -3,7 +3,7 @@ def call(name){
     	stage ('nodestage') {
 		if (!currentBuild.getBuildCauses('jenkins.branch.BranchEventCause')) {
 			currentBuild.result = 'ABORTED'
-        		error('Stopping early…')
+        		error('Stopping early...')
 		}	
 	}
     }
