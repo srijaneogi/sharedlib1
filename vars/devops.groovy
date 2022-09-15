@@ -5,9 +5,8 @@ def call(mapname){
             stage('Hello') {			
             	steps {
 		   script {
-			def b = env.BRANCH_NAME
-			echo "$b"
-			echo "2222222222 ${mapname} hello from shared lib 1"
+			   echo "${env.BRANCH_NAME}"
+			echo "${mapname} hello from shared lib 1"
 			echo "${mapname["name"]}"
 		   }
             	}
