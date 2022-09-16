@@ -2,7 +2,7 @@ def call(mapname){
     pipeline {
     	agent any
 	environment {
-    	def city = mapname.get("city")
+    		city = mapname.get("city")
 	}
     	stages {
             stage('Hello') {			
