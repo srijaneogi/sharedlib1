@@ -11,6 +11,9 @@ def call(mapname){
 			println(mapname.get("age"))
 			def city = mapname.get("city")
 			echo "CITY:::${city}"
+			
+			def mark = mapname.get("mark")
+			echo "MARK:::${mark}"
 		   }
             	}
             }
