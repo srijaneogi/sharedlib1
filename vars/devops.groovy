@@ -18,7 +18,7 @@ def call(mapname){
 			def mark = mapname.get("mark")
 			echo "MARK:::${mark}"
 			def b = "devops"
-					    if ("$b".contains("dev") && ("$mark" == "right" || "$mark" == null)) {
+					    if ("$b".contains("dev") && ("$mark" == "right" || "$mark" == '')) {
 					        echo "All good"
 					    }
 		   }
